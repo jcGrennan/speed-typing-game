@@ -16,15 +16,14 @@ function App() {
   // }
 
   useEffect(() => {
-    if(timeRemaining === 0) {
-      setIsTimeRunning(false)
-    }
     if(isTimeRunning && timeRemaining > 0) {
       setTimeout(() => {
       setTimeRemaining(prevTime => prevTime - 1)
       }, 1000)
+    } else if(timeRemaining === 0) {
+      setIsTimeRunning(false)
+      console.log(isTimeRunning)
     }
-
   }, [isTimeRunning, timeRemaining])
 
   return (
