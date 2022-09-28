@@ -10,7 +10,7 @@ function App() {
 
   function countWords(string) {
     const wordsArr = string.trim().split(" ")
-    return wordsArr.filter(word => word !== "")
+    return wordsArr.filter(word => word !== "").length
   }
 
   return (
