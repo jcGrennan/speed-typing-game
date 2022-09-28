@@ -43,7 +43,7 @@ function App() {
       <h1>Can you type a word per second???</h1>
       <textarea value={text} onChange={handleChange}/>
       <h4>Time Remaining : {timeRemaining}</h4>
-      <button onClick={startGame}>Start</button>
+      <button disabled={isTimeRunning} onClick={startGame}>Start</button>
       <h1>Word Count: {wordCount}</h1>
     </div>
   );
