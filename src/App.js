@@ -10,10 +10,10 @@ function App() {
     setText(event.target.value)
   }
 
-  // function countWords(string) {
-  //   const wordsArr = string.trim().split(" ")
-  //   return wordsArr.filter(word => word !== "").length
-  // }
+  function countWords(string) {
+    const wordsArr = string.trim().split(" ")
+    return wordsArr.filter(word => word !== "").length
+  }
 
   useEffect(() => {
     if(isTimeRunning && timeRemaining > 0) {
@@ -32,7 +32,7 @@ function App() {
       <textarea value={text} onChange={handleChange}/>
       <h4>Time Remaining : {timeRemaining}</h4>
       <button onClick={() => setIsTimeRunning(true)}>Start</button>
-      <h1>Word Count: </h1>
+      <h1>Word Count: {timeRemaining === 0 && `${countWords(text)}`}</h1>
     </div>
   );
 }
