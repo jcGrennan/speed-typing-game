@@ -1,9 +1,9 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 
 function App() {
 
   const [text, setText] = useState("")
-  const [timeRemaining] = useState(30)
+  const [timeRemaining, setTimeRemaining] = useState(5)
 
   function handleChange(event) {
     setText(event.target.value)
@@ -13,6 +13,16 @@ function App() {
     const wordsArr = string.trim().split(" ")
     return wordsArr.filter(word => word !== "").length
   }
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setTimeRemaining(prevTime => prevTime - 1)
+    }, 1000)
+
+    if(timeRemaining === 0) {
+      clearTimeout(timeoutId)
+    }
+  }, [timeRemaining])
 
   return (
     <div>
