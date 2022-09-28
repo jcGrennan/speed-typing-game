@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react"
 
 function App() {
 
-  const STARTING_TIME = 5
+  const STARTING_TIME = 30
   const [text, setText] = useState("")
   const [timeRemaining, setTimeRemaining] = useState(STARTING_TIME)
   const [isTimeRunning, setIsTimeRunning] = useState(false)
@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div>
-      <h1>Speed Typing Game</h1>
+      <h1>Can you type a word per second???</h1>
       <textarea value={text} onChange={handleChange}/>
       <h4>Time Remaining : {timeRemaining}</h4>
       <button onClick={startGame}>Start</button>
