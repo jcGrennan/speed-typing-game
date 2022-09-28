@@ -12,6 +12,11 @@ function App() {
     setText(event.target.value)
   }
 
+  function countWords(string) {
+    const wordsArr = string.trim().split(" ")
+    return wordsArr.filter(word => word !== "").length
+  }
+
   function startGame() {
     setTimeRemaining(STARTING_TIME)
     setIsTimeRunning(true)
@@ -22,12 +27,6 @@ function App() {
     setIsTimeRunning(false)
     setWordCount(countWords(text))
   }
-
-  function countWords(string) {
-    const wordsArr = string.trim().split(" ")
-    return wordsArr.filter(word => word !== "").length
-  }
-
 
   useEffect(() => {
     if(isTimeRunning && timeRemaining > 0) {
