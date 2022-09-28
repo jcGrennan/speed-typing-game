@@ -9,15 +9,16 @@ function App() {
   }
 
   function countWords(string) {
-    return string.split(" ").length
+    const wordsArr = string.trim().split(" ")
+    return wordsArr.filter(word => word !== "")
   }
-  
+
   return (
     <div>
       <h1>Speed Typing Game</h1>
       <textarea value={text} onChange={handleChange}/>
       <h4>Time Remaining :</h4>
-      <button onClick={(console.log(countWords(text)))}>Start</button>
+      <button onClick={() => console.log(countWords(text))}>Start</button>
       <h1>Word Count: </h1>
     </div>
   );
