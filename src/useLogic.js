@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useState, useRef, useEffect} from "react"
 
 function useLogic() {
     const STARTING_TIME = 5
@@ -40,6 +40,15 @@ function useLogic() {
       }
     }, [isTimeRunning, timeRemaining])
   
+    return [
+        text, 
+        timeRemaining, 
+        isTimeRunning, 
+        wordCount, 
+        textAreaRef, 
+        handleChange, 
+        startGame
+    ]
 }
 
 export default useLogic
